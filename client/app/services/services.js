@@ -3,6 +3,7 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
   // Your code here
 })
+
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
@@ -21,7 +22,7 @@ angular.module('shortly.services', [])
       return resp.data.token;
     });
   };
-
+//takes in http mtd from http and adds a token to the resp.data:(*USER*)
   var signup = function (user) {
     return $http({
       method: 'POST',
@@ -32,7 +33,7 @@ angular.module('shortly.services', [])
       return resp.data.token;
     });
   };
-
+//how is this related to the prev two lines? 
   var isAuth = function () {
     return !!$window.localStorage.getItem('com.shortly');
   };
@@ -50,3 +51,4 @@ angular.module('shortly.services', [])
     signout: signout
   };
 });
+
