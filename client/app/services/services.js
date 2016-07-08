@@ -1,7 +1,34 @@
 angular.module('shortly.services', [])
 
 .factory('Links', function ($http) {
-  // Your code here
+  //retreive all links
+  var getAll = function () {
+    return $http({
+      method: 'GET',
+      title: 'title',
+      url: '/api/links',
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  };
+
+  //adding a new link to the usrbase
+  var addOne = function (link) {
+    return $http({
+      method: 'POST',
+      url: '/api/links',
+      data: link
+    })
+    .then(function(resp) {
+      return resp;
+    });
+  };
+
+  return {
+    getAll: getAll,
+    addOne: addOne
+  };
 })
 
 .factory('Auth', function ($http, $location, $window) {

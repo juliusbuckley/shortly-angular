@@ -16,6 +16,13 @@ angular.module('shortly', [
       controller: 'AuthController'
     })
     // Your code here
+/*[] Enable navigation between the links view and shorten view
+  .when('/links')..
+  --template
+  --controler ('LinksController')
+  /when('shorten')..
+[] Enable authentication for the links view and shorten view
+[] Default to links view if an unknown client-side route is attempted*/
 
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
