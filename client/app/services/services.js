@@ -78,3 +78,36 @@ angular.module('shortly.services', [])
   };
 });
 
+
+//     DO WE NEED THIS? (from link model --deploy)
+// urlsSchema.pre('save', function (next) {
+//   var shasum = crypto.createHash('sha1');
+//   shasum.update(this.url);
+//   console.log('this', this);
+//   this.code = shasum.digest('hex').slice(0, 5);
+//   console.log('this.code', this.code);
+//   next();
+
+
+//   & OR THIS? 
+
+//   exports.fetchUrls = function(req, res) {
+//   ////retrieve the urls
+//   //then send back a status
+//   //  Url.find({}).exec(function(err,found) {});
+//   Link.reset().exec(function(err, links) {
+//     if (err) {
+//       res.status(500);
+//     }
+//     res.status(200).send(links);
+//   });
+// };
+
+// exports.saveLink = function(req, res) {
+//   var uri = req.body.url;
+
+//   if (!util.isValidUrl(uri)) {
+//     console.log('Not a valid url: ', uri);
+//     return res.sendStatus(404);
+//   }
+

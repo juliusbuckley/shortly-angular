@@ -23,11 +23,7 @@ angular.module('shortly', [
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
     });
-    // Your code here
-/*[] Enable navigation between the links view and shorten view
-  --template
-  --controler ('LinksController')
-  /when('shorten')..
+/*
 [] Enable authentication for the links view and shorten view
 [] Default to links view if an unknown client-side route is attempted*/
 
