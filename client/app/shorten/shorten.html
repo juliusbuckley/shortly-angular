@@ -2,11 +2,11 @@
 <div id='container'>
   <!-- Your html here -->
   <form name="linksForm">
-    <input type='text' ng-model="inputUrl">
-    <button ng-click="addLink({url: inputUrl})">Add Link</button>
+    <input type='url' name="linksField" ng-model="inputUrl" required>
+    <button ng-click="addLink({url: inputUrl}); inputUrl=''">Add Link</button>
+    <div ng-show="linksForm.linksField.$error.url">Please enter a valid url.<div>
+    <!-- <div ng-show="required">You did not enter a valid link</div> -->
+    </div>
   </form>
   <a href="#/signup">Not signed in? <strong>SignIn</strong> ...</a>
 </div>
-
-<!-- dynamically add links FROM LINKS submission AFTER they've been coded-->
-<!-- ref old html to see what structure looks like -->

@@ -47,7 +47,7 @@ describe('Services', function () {
     });
 
     it('should add a new link with `addOne`', function () {
-      var github = { url: 'https://github.com/hackreactor-labs' };
+      var github = {url: 'https://github.com/hackreactor-labs' };
 
       $httpBackend
         .expect('POST', '/api/links', JSON.stringify(github))

@@ -1,6 +1,6 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, $location, Links, Auth) {
+.controller('LinksController', function ($scope, $location, Links) {
   //addOne needs to happen on a form submit. 
   //When we post, a new link "addOne"
   //when we "addOne we need to dynamically append to our div"

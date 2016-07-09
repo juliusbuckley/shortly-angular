@@ -3,7 +3,8 @@ angular.module('shortly', [
   'shortly.links',
   'shortly.shorten',
   'shortly.auth',
-  'ngRoute'
+  'ngRoute',
+  'ngMessages'
 ])
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
@@ -13,17 +14,21 @@ angular.module('shortly', [
     })
     .when('/signup', {
       templateUrl: 'app/auth/signup.html',
-      controller: 'AuthController'
+      controller: 'AuthController',
     })
     .when('/links', {
       templateUrl: 'app/links/links.html',
-      controller: 'LinksController'
+      controller: 'LinksController',
+      authenticate: true
+
     })
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
-      controller: 'ShortenController'
+      controller: 'ShortenController',
+      authenticate: true
+
     })
-    .otherwise({redirectTo: '/index.html'});
+    .otherwise({redirectTo: '/signin'});
 /*
 [] Enable authentication for the links view and shorten view
 [] Default to links view if an unknown client-side route is attempted*/
