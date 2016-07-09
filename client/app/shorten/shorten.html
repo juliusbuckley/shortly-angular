@@ -1,10 +1,12 @@
-<div id='container'>
-  <ul>
-    <li ng-repeat="link in links track by $index">{{link}}
-    </li>
-  </ul>
-</div>
 
+<div id='container'>
+  <!-- Your html here -->
+  <form name="linksForm">
+    <input type='text' ng-model="inputUrl">
+    <button ng-click="addLink({url: inputUrl})">Add Link</button>
+  </form>
+  <a href="#/signup">Not signed in? <strong>SignIn</strong> ...</a>
+</div>
 
 <!-- dynamically add links FROM LINKS submission AFTER they've been coded-->
 <!-- ref old html to see what structure looks like -->

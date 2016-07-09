@@ -1,12 +1,41 @@
-<div id='container' ng-controller="LinksController">
-  <!-- Your html here -->
-  <input ng-model="link">
-  <button ng-click="addOne(link)">Add Link</button>
-  <ul>
-    <li ng-repeat="link in links track by $index">{{link}}
-    </li>
-  </ul>
+<div id='container'>
+<!-- <div ng-include= " '/app/links/links.html' "> -->
+<!-- </div> -->
+ <!-- ng-controller="LinksController" -->
+<div ng-repeat="link in data.links">{{link}}
+</div>
+  <div class='info'>
+    <div class='visits'><span class='count'>{{link.visits}}</span>Visits
+    </div>
+    <div class='title'>{{link.title}}
+    </div>
+    <div class='original'>{{link.url}}
+    </div>
+  <a href='{{link.baseUrl}}/{{link.code}}'>{{link.baseUrl}}/{{link.code}}</a>
+  </div>
 </div>
 
 
 <!-- dynamically add links using ng shit -->
+
+<!-- <div id='signin'>
+  <h1>signin</h1>
+  <form name="signinForm" ng-submit='signin()'>
+    <input type='text'ng-model='user.username'>
+    <input type="password" ng-model='user.password'>
+    <button>signin</button>
+  </form>
+  <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
+</div> -->
+
+<!-- 
+  <form name="linksForm" ng-submit='getAll()'>
+    <input type='text' ng-model="link">
+    <button ng-click="addOne(link)">Add Link</button>
+  </form>
+  <ul>
+    <li ng-repeat="link in links.data track by $index">{{link}}
+    </li>
+  </ul>  -->
+
+  <!-- <a href="#/signup">Not signed in? <strong>SignIn</strong> ...</a> -->

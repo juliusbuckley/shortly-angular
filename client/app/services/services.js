@@ -17,7 +17,7 @@ angular.module('shortly.services', [])
     return $http({
       method: 'POST',
       url: '/api/links',
-      data: link
+      data: JSON.stringify(link)
     })
     .then(function(resp) {
       return resp;
@@ -28,6 +28,18 @@ angular.module('shortly.services', [])
     getAll: getAll,
     addOne: addOne
   };
+})
+
+.factory('Valid', function () {
+
+  var validateLink = function () {
+
+  };
+
+  var validateUser = function () {
+
+  };
+
 })
 
 .factory('Auth', function ($http, $location, $window) {

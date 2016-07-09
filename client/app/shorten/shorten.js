@@ -2,11 +2,8 @@ angular.module('shortly.shorten', [])
 
 .controller('ShortenController', function ($scope, Links) {
   $scope.link = {};
-  $scope.addLink = function () {
-  	//IF IS A REAL LINK (validated)
-    Links.addOne().then(function(data) {
-      $scope.link = data;
-    });
+  $scope.addLink = function (url) {
+    Links.addOne(url);
   };
 });
 
@@ -22,3 +19,9 @@ angular.module('shortly.shorten', [])
 
 
 */
+
+// Links.addOne.then(function(data) {
+//       console.log('data', data);
+//       $scope.link = data;
+//     });
+//   };

@@ -22,7 +22,8 @@ angular.module('shortly', [
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
-    });
+    })
+    .otherwise({redirectTo: '/index.html'});
 /*
 [] Enable authentication for the links view and shorten view
 [] Default to links view if an unknown client-side route is attempted*/
