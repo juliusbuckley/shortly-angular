@@ -1,5 +1,11 @@
-<div id='container'>
+<div id='container' ng-controller="LinksController">
   <!-- Your html here -->
+  <input ng-model="link">
+  <button ng-click="addOne(link)">Add Link</button>
+  <ul>
+    <li ng-repeat="link in links track by $index">{{link}}
+    </li>
+  </ul>
 </div>
 
 

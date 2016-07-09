@@ -1,17 +1,16 @@
 angular.module('shortly.links', [])
 
 .controller('LinksController', function ($scope, Links) {
-  // Your code here
-
-
-  //   $scope.links = function () {
-  //   Auth.signin($scope.user)
-  //     .then(function (token) {
-  //       $window.localStorage.setItem('com.shortly', token);
-  //       $location.path('/links');
-  //     })
-  //     .catch(function (error) {
-  //       console.error(error);
-  //     });
-  // };
+  //addOne needs to happen on a form submit. 
+  //When we post, a new link "addOne"
+  //when we "addOne we need to dynamically append to our div"
+  //temp $scope.link = user
+  $scope.data = {
+    links: []
+  };
+  //set scopedatalinks to the result of the getAll funtion.
+  Links.getAll().then(function(data) {
+    $scope.data.links = data;
+  });
 });
+ 

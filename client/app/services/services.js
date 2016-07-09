@@ -5,8 +5,7 @@ angular.module('shortly.services', [])
   var getAll = function () {
     return $http({
       method: 'GET',
-      title: 'title',
-      url: '/api/links',
+      url: '/api/links'
     })
     .then(function(resp) {
       return resp.data;
@@ -24,7 +23,7 @@ angular.module('shortly.services', [])
       return resp;
     });
   };
-
+  //we might 
   return {
     getAll: getAll,
     addOne: addOne
